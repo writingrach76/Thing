@@ -3,29 +3,30 @@
 
 int main (void)
 {
-	printf("How big is this thing?");
-	char* b =malloc(2*sizeof(char));
-	fgts(b, 2, stdin);
+	printf("How big is this thing?\n");
+	char* b =malloc(3*sizeof(char));
+	fgets(b, 3, stdin);
 	int length = atoi(b);
 	int nums [length]; 
 	for(int i =0; i < length; i++)
 	{
-		printf("\nGive me a number");
-		char* t = malloc(2*sizeof(char));
-		fgts(t, 2, stdin);
+		printf("Give me a number\n");
+		char* t = malloc(3*sizeof(char));
+		fgets(t, 3, stdin);
 		int temp = atoi(t);
+		free(t);
 		nums[i] = temp;
 	}
-	printf("\n Now, what number are you looking for?");
-	char* g = malloc(2*sizeof(char));
-	fgts(g, 2, stdin);
+	printf("Now, what number are you looking for?\n");
+	char* g = malloc(3*sizeof(char));
+	fgets(g, 2, stdin);
 	int goal = atoi(g);
 	for(int i = 0; i < length; i++)
 	{
 		if(nums[i] == goal)
-			printf("\n It's here");
+			printf("It's here\n");
 		else
-			printf("\n Nope not here");
+			printf("Nope not here\n");
 	}
 
 	
